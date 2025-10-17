@@ -35,5 +35,5 @@ app.get("/", (req, res) => {
 app.use("/api", limiter, routes);
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`🚀 Server running on the host: http://localhost:${PORT}`);
 });
