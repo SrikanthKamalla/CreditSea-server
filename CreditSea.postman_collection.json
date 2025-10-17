@@ -1,0 +1,567 @@
+{
+	"info": {
+		"_postman_id": "048d0b03-2d3c-4c83-a563-a41e6d5785c5",
+		"name": "CreditSea",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45522597",
+		"_collection_link": "https://srikanthkamalla-3165932.postman.co/workspace/Srikanth-Kamalla's-Workspace~bab9ef2d-2e16-4376-80f5-ba6388644f04/collection/45522597-048d0b03-2d3c-4c83-a563-a41e6d5785c5?action=share&source=collection_link&creator=45522597"
+	},
+	"item": [
+		{
+			"name": "Auth APIs",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John Doe\",\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main}}/api/auth/register",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main}}/api/auth/login",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User Profile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main}}/api/auth/profile",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Smith\",\r\n    \"email\": \"johnsmith@example.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main}}/api/auth/login",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john@example.com\",\r\n  \"password\": \"password123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{main}}/api/auth/login",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "File Upload APIs",
+			"item": [
+				{
+					"name": "Upload XML File",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "xmlFile",
+									"type": "file",
+									"src": "/C:/Users/srika/Desktop/Sagar_Ugle1.xml"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{main}}/api/upload/xml",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"upload",
+								"xml"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Upload Status",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{main}}/api/upload/status/REPORT_OBJECT_ID",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"upload",
+								"status",
+								"REPORT_OBJECT_ID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reports APIs",
+			"item": [
+				{
+					"name": "Get All Reports",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Reports",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/search?q=sagar&page=1&limit=10",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "sagar"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Single Report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/68f27d24630e532e9e2278a2",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"68f27d24630e532e9e2278a2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report Basic Details",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/REPORT_OBJECT_ID/basic-details",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"REPORT_OBJECT_ID",
+								"basic-details"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Report Summary",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/REPORT_OBJECT_ID/summary",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"REPORT_OBJECT_ID",
+								"summary"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Credit Accounts",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/68f27d24630e532e9e2278a2/credit-accounts",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"68f27d24630e532e9e2278a2",
+								"credit-accounts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Report",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"yorahed457@aperiol.com\",\r\n    \"password\":\"yorahed457@aperiol.com\"\r\n}"
+						},
+						"url": {
+							"raw": "{{main}}/api/reports/REPORT_OBJECT_ID",
+							"host": [
+								"{{main}}"
+							],
+							"path": [
+								"api",
+								"reports",
+								"REPORT_OBJECT_ID"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "main",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
